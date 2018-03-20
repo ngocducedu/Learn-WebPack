@@ -1,0 +1,88 @@
+Ghi chu. Tom tat qua trinh tim hieu ve Git and Github
+
+** Creating GitHub account
+-- tao folder: mkdir  <name folder>
+-- tao fiel: touch demo_file
+-- tao content cho demo file:   echo "initial content" >> demo_file
+-- xem da co thay doi nao trong project:  git diff
+-- xem noi dung file: nano text.txt
+1.check verison:  Kiem tra phien ban
+	git --version
+
+2.config initial   Cau hinh ban dau- cu hinh tai khoan trung vs github
+	git config
+	git config --help
+
+-config global
+	git config --global user.name = "ngocducedu"
+	git config --global user.email = "superufom@gmail.com"
+
+	
+3. Creat file project in local repository  ....Tao 1 project o local
+	git cd /Project
+	git init
+-check status project		kiem tra trang thai thay doi cua project, kiem tra commit									
+	git status
+
+4. add change project           them thay doi de san sang commit 
+	git add .  // change all
+	git add <filename>   // 1 file
+
+5. commit for local user    commit cho nguoi dung local
+	git commit -m "commit to repository"  // neu project bi chang => chua san sang commit => su dung git add .
+	
+-lenh tat gop git add . va git commit -m "commit to repository"
+	git commit -a -m "commit to repository"
+	
+
+6. check log for comit	 kiem tra lich su commit
+	git log
+	git log --oneline  // log ra 1 line
+
+7. Push Project
+	git push // lenh goi y
+	
+-Tao remote repository  tren github
+	git remote add <name> <url> 
+	
+- 	git remote add test https://github.com/ngocducedu/Test.git
+	git push test
+	git push --set-upstream test master
+Or 
+	git push test master --force
+
+
+8. Clone project
+	git clone https://github.com/ngocducedu/round2-oe.git
+// thu change noi dung 1 file
+	
+	git status
+	git add .
+	git commit -m"changpush"
+	git push
+
+9. Revert project --- back up laij thoi diem commit - dung hashcode
+	git log 
+	git revert 696a8a215045174e63dde178e32e3bf522d5cb2d
+
+
+10. Pull code.	
+	git pull
+	
+
+---------------------
+11. Create brach from master --- tao branch moi tu branch master
+	git checkout -b branch-new
+	
+12. return branch mastet -- quay tro lai branch master
+	git checkout master
+
+13. merge branch-new vao master
+	git merge branch-new
+
+
+
+
+
+	
+
