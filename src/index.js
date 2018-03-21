@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './style.css'
 
 class TimeApp extends React.Component{
     constructor(props) {
@@ -66,14 +67,16 @@ class TimeApp extends React.Component{
 
     render() {
         return(
-            <div>
+            <div className="home">
                 <form onSubmit={this.handleSubmit}>
-                    <label>
-                    Timer:
-                    <input type="text" value={this.state.seconds} onChange={this.handleChange}/>
-                    </label>
-                    <button onClick={this.startTime}>Start</button>
-                    h: {this.state.time.h } m: {this.state.time.m} s: {this.state.time.s}
+                    <div id="clock">
+                        <label>
+                        <input type="text" onChange={this.handleChange}/>
+                        </label>
+                        <p className="text">Countdown Timer</p>
+                        <button onClick={this.startTime} className="btn">Start</button>            
+                        <p className="time"> {this.state.time.h } h: {this.state.time.m} m: {this.state.time.s}</p>
+                    </div>
                 </form>
             </div>
         );

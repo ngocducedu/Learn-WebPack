@@ -92,4 +92,29 @@ entry: [
 
 
 => npm start
+
+====
+Loading css: 
+	npm install --save-dev style-loader css-loader
+
+webpack.config.js: add ==>
++   module: {
++     rules: [
++       {
++         test: /\.css$/,
++         use: [
++           'style-loader',
++           'css-loader'
++         ]
++       }
++     ]
++   }
+
+=>import './style.css'
+=> src/index.js   :  import './style.css';
+
+npm run build
+
+--
+
 	
