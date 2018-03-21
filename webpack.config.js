@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     entry: [
         'react-hot-loader/patch',
@@ -5,12 +7,15 @@ module.exports = {
     ],
     module: {
         rules: [
-          {
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            use: ['babel-loader']
-          }
-        ]
+            {
+              test: /\.(js|jsx|css)$/,
+              exclude: /node_modules/,
+              use: ['babel-loader',           
+                    'style-loader',
+                    'css-loader'
+                    ]
+            }
+          ]
     },
     resolve: {
     extensions: ['*', '.js', '.jsx']
